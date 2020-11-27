@@ -8,6 +8,7 @@ services:
       - "4200:4200" # specify port forewarding
     volumes:
       - ./angular-client:/app
+      - /app/node_modules
 
   express: #name of the second service
     build: express-server # specify the directory of the Dockerfile
@@ -21,6 +22,9 @@ services:
     image: mongo # specify image to build container from
     ports:
       - "27017:27017" # specify port forewarding
+    volumes:
+        - ./.docker/mongodb:/data/db
+    restart: always
 
   redis:
       image: "redis:alpine"
