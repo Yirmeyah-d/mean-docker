@@ -1,0 +1,18 @@
+<!-- Bootstrap Navbar -->
+<nav class="navbar navbar-light bg-faded">
+  <div class="container">
+    <a class="navbar-brand" href="#"> Nosql Project </a>
+  </div>
+</nav>
+
+<div class="container">
+  <h3>Users</h3>
+  <!-- Bootstrap Card -->
+  <ul class="list-group">
+    <app-users *ngFor="let user of users; let i = index"
+                  [indexUser]="i"
+                  [name]="user.name"
+                  [age]="user.age"
+                  [id]="user.id"></app-users>
+  </ul>
+</div>

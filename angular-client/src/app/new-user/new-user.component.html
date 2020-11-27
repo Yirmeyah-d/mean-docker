@@ -1,0 +1,20 @@
+<nav class="navbar navbar-light bg-faded">
+  <div class="container">
+    <a class="navbar-brand" href="#">Nosql Project</a>
+  </div>
+</nav>
+
+<div class="container">
+  <h3>Add new user</h3>
+  <form (ngSubmit)="onSubmit(f)" #f="ngForm" >
+    <div class="form-group">
+      <label for="name">Name</label>
+      <input type="text" id="name" class="form-control" name="name" ngModel required>
+    </div>
+    <div class="form-group">
+      <label for="age">Age</label>
+      <input type="Number" id="age" class="form-control" name="age" ngModel required>
+    </div>
+    <button  type="submit" class="btn btn-primary"  [disabled]="f.invalid" >Save</button>
+  </form>
+</div>
